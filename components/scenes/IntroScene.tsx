@@ -13,16 +13,14 @@ export default function IntroScene() {
 
   // Waypoint guidance path points
   const initialGuidancePoints: [number, number, number][] = [
-    [0, 0.05, 14],
-    [0, 0.05, 8],
-    [0, 0.05, 2],
-    [0, 0.05, -4],
-    [0, 0.05, -9],
-    [0, 0.05, -14],
+    [0, 0.05, 2.0],
+    [0, 0.05, -3.0],
+    [0, 0.05, -8.0],
+    [0, 0.05, -14.0],
   ];
 
   const padGuidancePoints: [number, number, number][] = [
-    [0, 0.05, -14],
+    [0, 0.05, -12.0],
     [8, 0.05, -11.5],
     [18, 0.05, -9.5],
     [28, 0.05, -9.0], // Foot of launchpad stairs

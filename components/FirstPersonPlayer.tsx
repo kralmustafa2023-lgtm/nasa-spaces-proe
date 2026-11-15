@@ -14,8 +14,8 @@ const PLAYER_COLLISION_RADIUS = 0.45;
 export const SCENE_BOUNDS: Record<Scene, { minX: number; maxX: number; minZ: number; maxZ: number }> = {
   intro: { minX: -34, maxX: 38, minZ: -32, maxZ: 25 },
   launchCenterScan1: { minX: -8.2, maxX: 8.2, minZ: -8.2, maxZ: 8.2 },
-  shuttleCockpit: { minX: -2.8, maxX: 2.8, minZ: -4.5, maxZ: 2.5 },
-  orbit: { minX: -5.5, maxX: 5.5, minZ: -5.5, maxZ: 5.5 },
+  shuttleCockpit: { minX: -5.0, maxX: 5.0, minZ: -5.0, maxZ: 4.0 },
+  orbit: { minX: -5.0, maxX: 5.0, minZ: -5.0, maxZ: 4.0 },
   station: { minX: -8.2, maxX: 8.2, minZ: -8.2, maxZ: 8.2 },
   landing: { minX: -34, maxX: 38, minZ: -32, maxZ: 25 },
   launchCenterScan2: { minX: -8.2, maxX: 8.2, minZ: -8.2, maxZ: 8.2 },
@@ -102,11 +102,11 @@ const SCENE_OBSTACLES: Record<Scene, Hitbox[]> = {
   ],
   shuttleCockpit: [
     // Forward Instrument Deck
-    { minX: -2.5, maxX: 2.5, minZ: -4.8, maxZ: -3.2 },
+    { minX: -5.0, maxX: 5.0, minZ: -6.4, maxZ: -4.8 },
   ],
   orbit: [
     // Forward Console
-    { minX: -3.5, maxX: 3.5, minZ: -5.2, maxZ: -3.4 },
+    { minX: -5.0, maxX: 5.0, minZ: -6.4, maxZ: -4.8 },
   ],
 };
 
@@ -173,6 +173,46 @@ export default function FirstPersonPlayer({ onLockChange }: { onLockChange: (loc
 
   const isModalOpen = wristOpen || !!activeOverlay || !!activeRepair;
   const prevModalOpen = useRef(isModalOpen);
+
+  // Dynamic Scene Spawn Positioning (Ensures player spawns exactly at the right interactive location)
+  useEffect(() => {
+    const state = useGameStore.getState();
+    let spawn: [number, number, number];
+
+    if (scene === 'intro') {
+      if (state.scans.baseline) {
+        // Exiting HQ to climb launchpad stairs: spawn outside door facing rocket pad!
+        spawn = [0, PLAYER_HEIGHT, -12.0];
+      } else {
+        // Beginning of game: spawn on roadway facing HQ entrance
+        spawn = [0, PLAYER_HEIGHT, 2.0];
+      }
+    } else if (scene === 'shuttleCockpit') {
+      // Right in front of pilot instrument deck and launch switch
+      spawn = [0, PLAYER_HEIGHT, -2.5];
+    } else if (scene === 'orbit') {
+      // Right in front of docking controls and Earth view window
+      spawn = [0, PLAYER_HEIGHT, -2.5];
+    } else if (scene === 'station') {
+      // In the central walkway of ISS
+      spawn = [0, PLAYER_HEIGHT, 1.5];
+    } else if (scene === 'landing') {
+      // On runway pavement next to landed shuttle
+      spawn = [16.0, PLAYER_HEIGHT, -8.0];
+    } else if (scene === 'launchCenterScan1' || scene === 'launchCenterScan2') {
+      // Inside control room facing the consoles and scan booth
+      spawn = [0, PLAYER_HEIGHT, 2.0];
+    } else {
+      spawn = [0, PLAYER_HEIGHT, 2.0];
+    }
+
+    camera.position.set(spawn[0], spawn[1], spawn[2]);
+    camera.rotation.set(0, 0, 0);
+    keys.current.clear();
+    verticalVelocity.current = 0;
+    isGrounded.current = true;
+    wasGrounded.current = true;
+  }, [camera, scene]);
 
   // Automatic pointer lock management:
   // When modal/report opens: immediately release cursor so user can click freely.
