@@ -1,0 +1,848 @@
+{
+  "generatedAt": "2026-11-14T15:22:26.327Z",
+  "sizeUnit": "MiB (bytes / 1048576)",
+  "boundingBoxUnit": "metre; extents normalized to recommended real-world maximum dimension",
+  "note": "Önerilen scale hedef en uzun kenardır. ModelLoader modeli merkeze alır; position manifestte sahne yerleşimi olarak korunur.",
+  "models": {
+    "shuttle": {
+      "id": "shuttle",
+      "sourceFormat": "glb",
+      "file": "/models/shuttle.glb",
+      "sizeBytes": 330880,
+      "sizeMB": 0.32,
+      "triangleCount": 19378,
+      "textureCount": 11,
+      "textures": [
+        {
+          "index": 0,
+          "name": "baytile",
+          "width": null,
+          "height": null,
+          "format": "image/webp"
+        },
+        {
+          "index": 1,
+          "name": "wingtop",
+          "width": null,
+          "height": null,
+          "format": "image/webp"
+        },
+        {
+          "index": 2,
+          "name": "wing-flap-top",
+          "width": null,
+          "height": null,
+          "format": "image/webp"
+        },
+        {
+          "index": 3,
+          "name": "fusolage-aft-engines",
+          "width": null,
+          "height": null,
+          "format": "image/webp"
+        },
+        {
+          "index": 4,
+          "name": "tmptop",
+          "width": null,
+          "height": null,
+          "format": "image/webp"
+        },
+        {
+          "index": 5,
+          "name": "side-stb",
+          "width": null,
+          "height": null,
+          "format": "image/webp"
+        },
+        {
+          "index": 6,
+          "name": "side-prt",
+          "width": null,
+          "height": null,
+          "format": "image/webp"
+        },
+        {
+          "index": 7,
+          "name": "OMS-pod-stb",
+          "width": null,
+          "height": null,
+          "format": "image/webp"
+        },
+        {
+          "index": 8,
+          "name": "OMS-pod-prt",
+          "width": null,
+          "height": null,
+          "format": "image/webp"
+        },
+        {
+          "index": 9,
+          "name": "tail",
+          "width": null,
+          "height": null,
+          "format": "image/webp"
+        },
+        {
+          "index": 10,
+          "name": "PaletteBaseColor",
+          "width": 64,
+          "height": 4,
+          "format": "webp"
+        }
+      ],
+      "boundingBoxMeters": {
+        "min": [
+          -6.983337752479184,
+          -11.783043910372557,
+          -18.50002261713871
+        ],
+        "max": [
+          6.9835496647393605,
+          11.783043921897715,
+          18.49997738286129
+        ],
+        "size": [
+          13.966887417218544,
+          23.56608783227027,
+          37
+        ]
+      },
+      "rawBoundingBox": {
+        "min": [
+          -9097694.046188356,
+          -15350614.882019043,
+          -24101303.929992676
+        ],
+        "max": [
+          9097970.11946106,
+          15350614.897033691,
+          24101245.000061035
+        ],
+        "size": [
+          18195664.165649414,
+          30701229.779052734,
+          48202548.93005371
+        ]
+      },
+      "nodeNames": [
+        "shut.layer",
+        "shut",
+        "Düğüm 2"
+      ],
+      "hasAnimations": true,
+      "animationCount": 2,
+      "recommendedScale": 37,
+      "recommendedCenterOffset": [
+        -0.00010595613008801408,
+        11.783043910372557,
+        0.000022617138711211737
+      ],
+      "manifestPosition": [
+        0,
+        1.3,
+        -5
+      ],
+      "status": "optimized",
+      "warnings": []
+    },
+    "vab": {
+      "id": "vab",
+      "sourceFormat": "glb",
+      "file": "/models/vab.glb",
+      "sizeBytes": 50024,
+      "sizeMB": 0.05,
+      "triangleCount": 4586,
+      "textureCount": 3,
+      "textures": [
+        {
+          "index": 0,
+          "name": "vabwall6",
+          "width": null,
+          "height": null,
+          "format": "image/webp"
+        },
+        {
+          "index": 1,
+          "name": "vabsides3",
+          "width": null,
+          "height": null,
+          "format": "image/webp"
+        },
+        {
+          "index": 2,
+          "name": "PaletteBaseColor",
+          "width": 32,
+          "height": 4,
+          "format": "webp"
+        }
+      ],
+      "boundingBoxMeters": {
+        "min": [
+          -56.27545840177613,
+          -51.353217002275244,
+          -79.99910932766178
+        ],
+        "max": [
+          56.2767817928891,
+          51.355009998692886,
+          80.00089067233822
+        ],
+        "size": [
+          112.55224019466523,
+          102.70822700096812,
+          160
+        ]
+      },
+      "rawBoundingBox": {
+        "min": [
+          -245950.74911808968,
+          -224438.19295365855,
+          -349634.48413771385
+        ],
+        "max": [
+          245956.5329720974,
+          224446.02920812203,
+          349642.2694684788
+        ],
+        "size": [
+          491907.2820901871,
+          448884.2221617806,
+          699276.7536061927
+        ]
+      },
+      "nodeNames": [
+        "Vehicle Assembly Building (VAB)"
+      ],
+      "hasAnimations": false,
+      "animationCount": 0,
+      "recommendedScale": 160,
+      "recommendedCenterOffset": [
+        -0.0006616955564879845,
+        51.353217002275244,
+        -0.0008906723382153814
+      ],
+      "manifestPosition": [
+        -4,
+        0,
+        -5
+      ],
+      "status": "optimized",
+      "warnings": []
+    },
+    "starMap": {
+      "id": "starMap",
+      "sourceFormat": "bulunamadı",
+      "file": null,
+      "sizeBytes": 0,
+      "sizeMB": 0,
+      "triangleCount": 0,
+      "textureCount": 0,
+      "textures": [],
+      "boundingBoxMeters": null,
+      "rawBoundingBox": null,
+      "nodeNames": [],
+      "hasAnimations": false,
+      "animationCount": 0,
+      "recommendedScale": 100,
+      "recommendedCenterOffset": [
+        0,
+        0,
+        0
+      ],
+      "manifestPosition": null,
+      "status": "missing",
+      "warnings": [
+        "GLB bulunamadı"
+      ]
+    },
+    "astronaut": {
+      "id": "astronaut",
+      "sourceFormat": "glb",
+      "file": "/models/astronaut.glb",
+      "sizeBytes": 66860,
+      "sizeMB": 0.06,
+      "triangleCount": 6381,
+      "textureCount": 2,
+      "textures": [
+        {
+          "index": 0,
+          "name": "astnt1_1",
+          "width": null,
+          "height": null,
+          "format": "image/webp"
+        },
+        {
+          "index": 1,
+          "name": "astnt1_2",
+          "width": null,
+          "height": null,
+          "format": "image/webp"
+        }
+      ],
+      "boundingBoxMeters": {
+        "min": [
+          -0.835178620385843,
+          -0.9000000000395051,
+          -0.3344617357867956
+        ],
+        "max": [
+          0.835178620481784,
+          0.899999999960495,
+          0.33446173600830637
+        ],
+        "size": [
+          1.670357240867627,
+          1.8,
+          0.668923471795102
+        ]
+      },
+      "rawBoundingBox": {
+        "min": [
+          -1129052.888118744,
+          -1216682.9640371113,
+          -452148.7733735705
+        ],
+        "max": [
+          1129052.8882484436,
+          1216682.9639302997,
+          452148.77367302426
+        ],
+        "size": [
+          2258105.7763671875,
+          2433365.927967411,
+          904297.5470465948
+        ]
+      },
+      "nodeNames": [
+        "astronaut1"
+      ],
+      "hasAnimations": false,
+      "animationCount": 0,
+      "recommendedScale": 1.8,
+      "recommendedCenterOffset": [
+        -4.7970516448003764e-11,
+        0.9000000000395051,
+        -1.1075537709182015e-10
+      ],
+      "manifestPosition": [
+        -4,
+        0,
+        -3
+      ],
+      "status": "optimized",
+      "warnings": []
+    },
+    "missionControlRoom": {
+      "id": "missionControlRoom",
+      "sourceFormat": "glb",
+      "file": "/models/missionControlRoom.glb",
+      "sizeBytes": 56852,
+      "sizeMB": 0.05,
+      "triangleCount": 11130,
+      "textureCount": 0,
+      "textures": [],
+      "boundingBoxMeters": {
+        "min": [
+          -7.386317427933775,
+          -2.9968286166181226,
+          -12.499918178669732
+        ],
+        "max": [
+          7.386166517695319,
+          2.997012662092257,
+          12.500081821330268
+        ],
+        "size": [
+          14.772483945629094,
+          5.993841278710379,
+          25
+        ]
+      },
+      "rawBoundingBox": {
+        "min": [
+          -237724.99058055878,
+          -96451.45386831589,
+          -402303.7136265165
+        ],
+        "max": [
+          237720.13360881805,
+          96457.37728130644,
+          402308.9803849945
+        ],
+        "size": [
+          475445.12418937683,
+          192908.83114962233,
+          804612.694011511
+        ]
+      },
+      "nodeNames": [
+        "jscmiscon1"
+      ],
+      "hasAnimations": false,
+      "animationCount": 0,
+      "recommendedScale": 25,
+      "recommendedCenterOffset": [
+        0.00007545511922790737,
+        2.9968286166181226,
+        -0.00008182133026757299
+      ],
+      "manifestPosition": [
+        4,
+        0,
+        -4
+      ],
+      "status": "optimized",
+      "warnings": []
+    },
+    "landsat8": {
+      "id": "landsat8",
+      "sourceFormat": "glb",
+      "file": "/models/landsat8.glb",
+      "sizeBytes": 714652,
+      "sizeMB": 0.68,
+      "triangleCount": 85364,
+      "textureCount": 1,
+      "textures": [
+        {
+          "index": 0,
+          "name": "PaletteBaseColor",
+          "width": 128,
+          "height": 4,
+          "format": "webp"
+        }
+      ],
+      "boundingBoxMeters": {
+        "min": [
+          -2.9850321622230953,
+          -4.003623637762164,
+          -4.159329008183118
+        ],
+        "max": [
+          3.2730989366530934,
+          3.94986233965956,
+          4.840670991816882
+        ],
+        "size": [
+          6.258131098876189,
+          7.953485977421725,
+          9
+        ]
+      },
+      "rawBoundingBox": {
+        "min": [
+          -149915.9531053819,
+          -201072.2233167995,
+          -208892.1454287607
+        ],
+        "max": [
+          164383.4036049784,
+          198372.19336495065,
+          243110.88322322918
+        ],
+        "size": [
+          314299.35671036027,
+          399444.41668175015,
+          452003.0286519899
+        ]
+      },
+      "nodeNames": [
+        "Layer_0"
+      ],
+      "hasAnimations": false,
+      "animationCount": 0,
+      "recommendedScale": 9,
+      "recommendedCenterOffset": [
+        -0.14403338721499903,
+        4.003623637762164,
+        -0.3406709918168822
+      ],
+      "manifestPosition": [
+        -7,
+        5,
+        -19
+      ],
+      "status": "optimized",
+      "warnings": []
+    },
+    "markIIISuit": {
+      "id": "markIIISuit",
+      "sourceFormat": "glb",
+      "file": "/models/markIIISuit.glb",
+      "sizeBytes": 333576,
+      "sizeMB": 0.32,
+      "triangleCount": 69202,
+      "textureCount": 2,
+      "textures": [
+        {
+          "index": 0,
+          "name": "texturelogo",
+          "width": null,
+          "height": null,
+          "format": "image/webp"
+        },
+        {
+          "index": 1,
+          "name": "PaletteBaseColor",
+          "width": null,
+          "height": null,
+          "format": "image/webp"
+        }
+      ],
+      "boundingBoxMeters": {
+        "min": [
+          -0.5875014325572119,
+          -1.0499584983555854,
+          -0.5966220111300938
+        ],
+        "max": [
+          0.5875036618795094,
+          1.0500415016444145,
+          0.5965846574335983
+        ],
+        "size": [
+          1.1750050944367212,
+          2.0999999999999996,
+          1.1932066685636922
+        ]
+      },
+      "rawBoundingBox": {
+        "min": [
+          -18239.498481797054,
+          -32596.88466349686,
+          -18522.654862044674
+        ],
+        "max": [
+          18239.567693067715,
+          32599.46157357177,
+          18521.495183697076
+        ],
+        "size": [
+          36479.06617486477,
+          65196.34623706863,
+          37044.15004574175
+        ]
+      },
+      "nodeNames": [
+        "Mark III Spacesuit"
+      ],
+      "hasAnimations": false,
+      "animationCount": 0,
+      "recommendedScale": 2.1,
+      "recommendedCenterOffset": [
+        -0.0000011146611487711233,
+        1.0499584983555854,
+        0.00001867684824774507
+      ],
+      "manifestPosition": [
+        4,
+        0,
+        -3
+      ],
+      "status": "optimized",
+      "warnings": []
+    },
+    "issInternal": {
+      "id": "issInternal",
+      "sourceFormat": "fbx",
+      "file": "/models/issInternal.glb",
+      "sizeBytes": 3226564,
+      "sizeMB": 3.08,
+      "triangleCount": 405023,
+      "textureCount": 6,
+      "textures": [
+        {
+          "index": 0,
+          "name": "Gömülü görsel 1",
+          "width": null,
+          "height": null,
+          "format": "image/webp"
+        },
+        {
+          "index": 1,
+          "name": "Gömülü görsel 2",
+          "width": null,
+          "height": null,
+          "format": "image/webp"
+        },
+        {
+          "index": 2,
+          "name": "Gömülü görsel 3",
+          "width": 2048,
+          "height": 2048,
+          "format": "webp"
+        },
+        {
+          "index": 3,
+          "name": "Gömülü görsel 4",
+          "width": null,
+          "height": null,
+          "format": "image/webp"
+        },
+        {
+          "index": 4,
+          "name": "Gömülü görsel 5",
+          "width": null,
+          "height": null,
+          "format": "image/webp"
+        },
+        {
+          "index": 5,
+          "name": "Gömülü görsel 6",
+          "width": 2048,
+          "height": 2048,
+          "format": "webp"
+        }
+      ],
+      "boundingBoxMeters": {
+        "min": [
+          -1.9508842175283387,
+          -1.9999671221150295,
+          -0.8228352072299223
+        ],
+        "max": [
+          1.950968255996854,
+          2.0000328778849705,
+          0.82284489775375
+        ],
+        "size": [
+          3.9018524735251927,
+          4,
+          1.6456801049836725
+        ]
+      },
+      "rawBoundingBox": {
+        "min": [
+          -328974276.73877776,
+          -337251043.18732816,
+          -138753296.96224472
+        ],
+        "max": [
+          328988448.00232565,
+          337262131.4706119,
+          138754931.0587425
+        ],
+        "size": [
+          657962724.7411034,
+          674513174.65794,
+          277508228.0209872
+        ]
+      },
+      "nodeNames": [
+        "Cupola_Int_Glass",
+        "Cupola_Int_Cabin",
+        "Cupola_Int_Metal",
+        "BoneRoot",
+        "Bone_Position003",
+        "BoneRotation003",
+        "Bone_Position006",
+        "BoneRotation006",
+        "Bone_Position004",
+        "BoneRotation004",
+        "Bone_Position001",
+        "BoneRotation001",
+        "Bone_Position005",
+        "BoneRotation005",
+        "Bone_Position002",
+        "BoneRotation002",
+        "Bone_Position000",
+        "BoneRotation000",
+        "US_Lab_Int_Racks_001",
+        "US_Lab_Int_Racks_003",
+        "US_Lab_Int_MSS_AV",
+        "BEAM_Interior",
+        "Node2_Int_RackZTH",
+        "Node3_Int_RackCOLBERT",
+        "Node3_Int_RackMID",
+        "Node3_Int_RackZNH",
+        "Node3_Int_Rack_WHC",
+        "JLP_Int_Bulkhead",
+        "Düğüm 28",
+        "Düğüm 29"
+      ],
+      "hasAnimations": false,
+      "animationCount": 0,
+      "recommendedScale": 4,
+      "recommendedCenterOffset": [
+        -0.000042019234257617555,
+        1.9999671221150295,
+        -0.000004845261913855037
+      ],
+      "manifestPosition": [
+        5,
+        0,
+        -4
+      ],
+      "status": "optimized",
+      "warnings": [
+        "GLB yok, dönüştürme gerekir (veya kaynak indirmesi tamamlanmalı)",
+        "FBX dönüşümünde GLB içine 6 benzersiz doku aktarıldı."
+      ]
+    },
+    "jason1": {
+      "id": "jason1",
+      "sourceFormat": "glb",
+      "file": "/models/jason1.glb",
+      "sizeBytes": 358968,
+      "sizeMB": 0.34,
+      "triangleCount": 83229,
+      "textureCount": 4,
+      "textures": [
+        {
+          "index": 0,
+          "name": "Square Panels 1",
+          "width": null,
+          "height": null,
+          "format": "image/webp"
+        },
+        {
+          "index": 1,
+          "name": "Solar Panel 1-Solar Panel 1",
+          "width": null,
+          "height": null,
+          "format": "image/webp"
+        },
+        {
+          "index": 2,
+          "name": "PaletteBaseColor",
+          "width": 32,
+          "height": 4,
+          "format": "webp"
+        },
+        {
+          "index": 3,
+          "name": "PaletteMetallicRoughness",
+          "width": 32,
+          "height": 4,
+          "format": "webp"
+        }
+      ],
+      "boundingBoxMeters": {
+        "min": [
+          -3.3892253988813867,
+          -2.113285993916371,
+          -3.500000944940035
+        ],
+        "max": [
+          3.3892185696019648,
+          2.1133083898367904,
+          3.4999990550599644
+        ],
+        "size": [
+          6.7784439684833515,
+          4.226594383753161,
+          7
+        ]
+      },
+      "rawBoundingBox": {
+        "min": [
+          -9242355.937734758,
+          -5762892.417969935,
+          -9544438.834378008
+        ],
+        "max": [
+          9242337.314414151,
+          5762953.491237042,
+          9544433.680709474
+        ],
+        "size": [
+          18484693.25214891,
+          11525845.909206975,
+          19088872.51508748
+        ]
+      },
+      "nodeNames": [
+        "Jason-1_vFINAL [Black Surfaces]",
+        "Jason-1_vFINAL [Dark Grey]",
+        "Jason-1_vFINAL [Solar Panels]",
+        "Jason-1_vFINAL [Steel Panels]"
+      ],
+      "hasAnimations": false,
+      "animationCount": 0,
+      "recommendedScale": 7,
+      "recommendedCenterOffset": [
+        0.0000034146397109857674,
+        2.113285993916371,
+        9.449400353300774e-7
+      ],
+      "manifestPosition": [
+        8,
+        4,
+        -22
+      ],
+      "status": "optimized",
+      "warnings": []
+    },
+    "headquarters": {
+      "id": "headquarters",
+      "sourceFormat": "glb",
+      "file": "/models/headquarters.glb",
+      "sizeBytes": 40608,
+      "sizeMB": 0.04,
+      "triangleCount": 4636,
+      "textureCount": 1,
+      "textures": [
+        {
+          "index": 0,
+          "name": "PaletteBaseColor",
+          "width": 64,
+          "height": 4,
+          "format": "webp"
+        }
+      ],
+      "boundingBoxMeters": {
+        "min": [
+          -10.674954693566912,
+          -12.499616601648919,
+          -5.779066659233997
+        ],
+        "max": [
+          10.675027378338314,
+          12.500383398351083,
+          5.779058483072894
+        ],
+        "size": [
+          21.349982071905224,
+          25,
+          11.558125142306892
+        ]
+      },
+      "rawBoundingBox": {
+        "min": [
+          -126588.28562908122,
+          -148225.92526571464,
+          -68530.70218363339
+        ],
+        "max": [
+          126589.14755691765,
+          148235.0182766678,
+          68530.60522713598
+        ],
+        "size": [
+          253177.43318599887,
+          296460.94354238245,
+          137061.30741076937
+        ]
+      },
+      "nodeNames": [
+        "pCube1",
+        "Düğüm 1"
+      ],
+      "hasAnimations": false,
+      "animationCount": 0,
+      "recommendedScale": 25,
+      "recommendedCenterOffset": [
+        -0.00003634238570082715,
+        12.499616601648919,
+        0.000004088080551856166
+      ],
+      "manifestPosition": [
+        4,
+        0,
+        -5
+      ],
+      "status": "optimized",
+      "warnings": []
+    }
+  }
+}

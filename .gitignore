@@ -1,0 +1,12 @@
+node_modules/
+.next/
+out/
+*.tsbuildinfo
+.env*
+!.env.example
+/public/models/raw/
+playwright-report/
+test-results/
+*.log
+
+.validation/

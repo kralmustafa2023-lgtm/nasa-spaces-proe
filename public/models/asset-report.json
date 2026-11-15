@@ -1,0 +1,558 @@
+{
+  "generatedAt": "2026-11-14T10:51:10.013Z",
+  "sizeUnit": "MiB (bytes / 1048576)",
+  "note": "Yalnız kaynak HTML içindeki gerçek NASA indirme bağlantıları. ZIP çıkarma ve format dönüştürme yapılmaz.",
+  "assets": [
+    {
+      "id": "shuttle",
+      "label": "Space Shuttle",
+      "sourcePage": "https://science.nasa.gov/3d-resources/space-shuttle-d/",
+      "files": [
+        {
+          "url": null,
+          "fileName": "shuttle.glb",
+          "format": "glb",
+          "localPath": "/models/shuttle.glb",
+          "sizeBytes": 2471932,
+          "sizeMB": 2.36,
+          "status": "local",
+          "origin": "existing-local",
+          "error": null
+        }
+      ],
+      "formats": [
+        "glb"
+      ],
+      "sizeMB": 0.32,
+      "hasGLB": true,
+      "glbPath": "/models/shuttle.glb",
+      "warnings": [],
+      "errors": [
+        "fetch failed (EACCES)"
+      ],
+      "conversion": {
+        "status": "not-needed",
+        "note": "GLB zaten vardı; dönüşüm atlandı."
+      },
+      "optimization": {
+        "sourceMB": 0.32,
+        "budgetMB": 5,
+        "status": "optimized",
+        "simplifyRatio": 1,
+        "outputMB": 0.32,
+        "textureSize": 1024,
+        "compression": "meshopt",
+        "textureCompression": "webp",
+        "finalMB": 0.32
+      }
+    },
+    {
+      "id": "vab",
+      "label": "Vehicle Assembly Building",
+      "sourcePage": "https://science.nasa.gov/3d-resources/vehicle-assembly-building-vab/",
+      "files": [
+        {
+          "url": null,
+          "fileName": "vab.glb",
+          "format": "glb",
+          "localPath": "/models/vab.glb",
+          "sizeBytes": 6505624,
+          "sizeMB": 6.2,
+          "status": "local",
+          "origin": "existing-local",
+          "error": null
+        }
+      ],
+      "formats": [
+        "glb"
+      ],
+      "sizeMB": 0.05,
+      "hasGLB": true,
+      "glbPath": "/models/vab.glb",
+      "warnings": [],
+      "errors": [
+        "fetch failed (EACCES)"
+      ],
+      "conversion": {
+        "status": "not-needed",
+        "note": "GLB zaten vardı; dönüşüm atlandı."
+      },
+      "optimization": {
+        "sourceMB": 0.05,
+        "budgetMB": 3,
+        "status": "optimized",
+        "simplifyRatio": 1,
+        "outputMB": 0.05,
+        "textureSize": 1024,
+        "compression": "meshopt",
+        "textureCompression": "webp",
+        "finalMB": 0.05
+      }
+    },
+    {
+      "id": "starMap",
+      "label": "Yale Bright Star Map",
+      "sourcePage": "https://science.nasa.gov/3d-resources/yale-bright-star-map/",
+      "files": [],
+      "formats": [],
+      "sizeMB": 0,
+      "hasGLB": false,
+      "glbPath": null,
+      "warnings": [
+        "GLB yok, dönüştürme gerekir (veya kaynak indirmesi tamamlanmalı)"
+      ],
+      "errors": [
+        "fetch failed (EACCES)"
+      ],
+      "zipSceneCandidates": [],
+      "conversion": {
+        "status": "missing",
+        "note": "Rapor ve raw klasöründe dönüştürülebilir kaynak dosya yok."
+      },
+      "optimization": {
+        "status": "missing",
+        "note": "Optimize edilecek GLB yok."
+      }
+    },
+    {
+      "id": "astronaut",
+      "label": "Astronaut",
+      "sourcePage": "https://science.nasa.gov/3d-resources/astronaut/",
+      "files": [
+        {
+          "url": null,
+          "fileName": "astronaut.glb",
+          "format": "glb",
+          "localPath": "/models/astronaut.glb",
+          "sizeBytes": 762988,
+          "sizeMB": 0.73,
+          "status": "local",
+          "origin": "existing-local",
+          "error": null
+        }
+      ],
+      "formats": [
+        "glb"
+      ],
+      "sizeMB": 0.06,
+      "hasGLB": true,
+      "glbPath": "/models/astronaut.glb",
+      "warnings": [],
+      "errors": [
+        "fetch failed (EACCES)"
+      ],
+      "conversion": {
+        "status": "not-needed",
+        "note": "GLB zaten vardı; dönüşüm atlandı."
+      },
+      "optimization": {
+        "sourceMB": 0.06,
+        "budgetMB": 3,
+        "status": "optimized",
+        "simplifyRatio": 1,
+        "outputMB": 0.06,
+        "textureSize": 1024,
+        "compression": "meshopt",
+        "textureCompression": "webp",
+        "finalMB": 0.06
+      }
+    },
+    {
+      "id": "missionControlRoom",
+      "label": "JSC Mission Control Room",
+      "sourcePage": "https://science.nasa.gov/3d-resources/jsc-mission-control-room/",
+      "files": [
+        {
+          "url": null,
+          "fileName": "missionControlRoom.glb",
+          "format": "glb",
+          "localPath": "/models/missionControlRoom.glb",
+          "sizeBytes": 185220,
+          "sizeMB": 0.18,
+          "status": "local",
+          "origin": "existing-local",
+          "error": null
+        }
+      ],
+      "formats": [
+        "glb"
+      ],
+      "sizeMB": 0.05,
+      "hasGLB": true,
+      "glbPath": "/models/missionControlRoom.glb",
+      "warnings": [],
+      "errors": [
+        "fetch failed (EACCES)"
+      ],
+      "conversion": {
+        "status": "not-needed",
+        "note": "GLB zaten vardı; dönüşüm atlandı."
+      },
+      "optimization": {
+        "sourceMB": 0.05,
+        "budgetMB": 5,
+        "status": "optimized",
+        "simplifyRatio": 1,
+        "outputMB": 0.05,
+        "textureSize": 2048,
+        "compression": "meshopt",
+        "textureCompression": "webp",
+        "finalMB": 0.05
+      }
+    },
+    {
+      "id": "landsat8",
+      "label": "Landsat 8",
+      "sourcePage": "https://science.nasa.gov/3d-resources/landsat-8/",
+      "files": [
+        {
+          "url": null,
+          "fileName": "landsat8.glb",
+          "format": "glb",
+          "localPath": "/models/landsat8.glb",
+          "sizeBytes": 780280,
+          "sizeMB": 0.74,
+          "status": "local",
+          "origin": "existing-local",
+          "error": null
+        }
+      ],
+      "formats": [
+        "glb"
+      ],
+      "sizeMB": 0.68,
+      "hasGLB": true,
+      "glbPath": "/models/landsat8.glb",
+      "warnings": [],
+      "errors": [
+        "fetch failed (EACCES)"
+      ],
+      "conversion": {
+        "status": "not-needed",
+        "note": "GLB zaten vardı; dönüşüm atlandı."
+      },
+      "optimization": {
+        "sourceMB": 0.68,
+        "budgetMB": 2,
+        "status": "optimized",
+        "simplifyRatio": 1,
+        "outputMB": 0.68,
+        "textureSize": 1024,
+        "compression": "meshopt",
+        "textureCompression": "webp",
+        "finalMB": 0.68
+      }
+    },
+    {
+      "id": "markIIISuit",
+      "label": "Mark III Spacesuit",
+      "sourcePage": "https://science.nasa.gov/3d-resources/mark-iii-spacesuit/",
+      "files": [
+        {
+          "url": null,
+          "fileName": "markIIISuit.glb",
+          "format": "glb",
+          "localPath": "/models/markIIISuit.glb",
+          "sizeBytes": 894092,
+          "sizeMB": 0.85,
+          "status": "local",
+          "origin": "existing-local",
+          "error": null
+        }
+      ],
+      "formats": [
+        "glb"
+      ],
+      "sizeMB": 0.32,
+      "hasGLB": true,
+      "glbPath": "/models/markIIISuit.glb",
+      "warnings": [],
+      "errors": [
+        "fetch failed (EACCES)"
+      ],
+      "conversion": {
+        "status": "not-needed",
+        "note": "GLB zaten vardı; dönüşüm atlandı."
+      },
+      "optimization": {
+        "sourceMB": 0.32,
+        "budgetMB": 3,
+        "status": "optimized",
+        "simplifyRatio": 1,
+        "outputMB": 0.32,
+        "textureSize": 1024,
+        "compression": "meshopt",
+        "textureCompression": "webp",
+        "finalMB": 0.32
+      }
+    },
+    {
+      "id": "issInternal",
+      "label": "ISS Internal",
+      "sourcePage": "https://science.nasa.gov/3d-resources/international-space-station-iss-e-internal/",
+      "files": [
+        {
+          "url": null,
+          "fileName": "International Space Station (ISS) (E) (internal).zip",
+          "format": "zip",
+          "localPath": "/models/raw/issInternal/International Space Station (ISS) (E) (internal).zip",
+          "sizeBytes": 305691278,
+          "sizeMB": 291.53,
+          "status": "local",
+          "origin": "user-provided",
+          "error": null
+        }
+      ],
+      "formats": [
+        "fbx"
+      ],
+      "sizeMB": 3.08,
+      "hasGLB": true,
+      "glbPath": "/models/issInternal.glb",
+      "warnings": [
+        "GLB yok, dönüştürme gerekir (veya kaynak indirmesi tamamlanmalı)",
+        "FBX dönüşümünde GLB içine 6 benzersiz doku aktarıldı."
+      ],
+      "errors": [
+        "fetch failed (EACCES)"
+      ],
+      "zipSceneCandidates": [
+        {
+          "file": "public/models/raw/issInternal/International Space Station (ISS) (E) (internal).zip -> International Space Station (ISS) (E) [internal].fbx",
+          "sizeBytes": 315560604
+        }
+      ],
+      "conversion": {
+        "status": "converted",
+        "selectedSource": "public/models/raw/issInternal/International Space Station (ISS) (E) (internal).zip -> International Space Station (ISS) (E) [internal].fbx",
+        "method": "Three.js FBXLoader + GLTFExporter",
+        "note": "315 MB FBX, 265 mesh ve 474489 üçgen. GLB optimize edilip 15 MB model bütçesinin altına indirildi; 6 gömülü doku korundu."
+      },
+      "optimization": {
+        "sourceMB": 57.39,
+        "budgetMB": 15,
+        "status": "optimized",
+        "simplifyRatio": 0.7,
+        "outputMB": 3.08,
+        "textureSize": 2048,
+        "compression": "meshopt",
+        "textureCompression": "webp",
+        "finalMB": 3.08
+      }
+    },
+    {
+      "id": "jason1",
+      "label": "Jason-1",
+      "sourcePage": "https://science.nasa.gov/3d-resources/jason-1/",
+      "files": [
+        {
+          "url": null,
+          "fileName": "jason1.glb",
+          "format": "glb",
+          "localPath": "/models/jason1.glb",
+          "sizeBytes": 592740,
+          "sizeMB": 0.57,
+          "status": "local",
+          "origin": "existing-local",
+          "error": null
+        }
+      ],
+      "formats": [
+        "glb"
+      ],
+      "sizeMB": 0.34,
+      "hasGLB": true,
+      "glbPath": "/models/jason1.glb",
+      "warnings": [],
+      "errors": [
+        "fetch failed (EACCES)"
+      ],
+      "conversion": {
+        "status": "not-needed",
+        "note": "GLB zaten vardı; dönüşüm atlandı."
+      },
+      "optimization": {
+        "sourceMB": 0.34,
+        "budgetMB": 2,
+        "status": "optimized",
+        "simplifyRatio": 1,
+        "outputMB": 0.34,
+        "textureSize": 1024,
+        "compression": "meshopt",
+        "textureCompression": "webp",
+        "finalMB": 0.34
+      }
+    },
+    {
+      "id": "headquarters",
+      "label": "NASA Headquarters",
+      "sourcePage": "https://science.nasa.gov/3d-resources/headquarters-building/",
+      "files": [
+        {
+          "url": null,
+          "fileName": "headquarters.glb",
+          "format": "glb",
+          "localPath": "/models/headquarters.glb",
+          "sizeBytes": 212508,
+          "sizeMB": 0.2,
+          "status": "local",
+          "origin": "existing-local",
+          "error": null
+        }
+      ],
+      "formats": [
+        "glb"
+      ],
+      "sizeMB": 0.04,
+      "hasGLB": true,
+      "glbPath": "/models/headquarters.glb",
+      "warnings": [],
+      "errors": [
+        "fetch failed (EACCES)"
+      ],
+      "conversion": {
+        "status": "not-needed",
+        "note": "GLB zaten vardı; dönüşüm atlandı."
+      },
+      "optimization": {
+        "sourceMB": 0.04,
+        "budgetMB": 2,
+        "status": "optimized",
+        "simplifyRatio": 1,
+        "outputMB": 0.04,
+        "textureSize": 1024,
+        "compression": "meshopt",
+        "textureCompression": "webp",
+        "finalMB": 0.04
+      }
+    }
+  ],
+  "conversionTools": {
+    "blender": {
+      "available": false,
+      "executable": null,
+      "output": null
+    },
+    "assimp": {
+      "available": false,
+      "executable": null,
+      "output": null
+    },
+    "fbx2gltf": {
+      "available": false,
+      "executable": null,
+      "output": null
+    }
+  },
+  "manualSteps": [
+    {
+      "id": "starMap",
+      "status": "missing",
+      "steps": [
+        "NASA kaynak sayfasından model dosyasını indirin.",
+        "Özgün dosya adını koruyarak public/models/raw/starMap/ içine koyun.",
+        "Blender ile GLB olarak dışa aktarın.",
+        "NASA kaynak sayfasından modeli indirin.",
+        "Modeli Blender ile GLB biçiminde dışa aktarın."
+      ]
+    }
+  ],
+  "updatedAt": "2026-11-14T15:22:26.336Z",
+  "optimizationTool": {
+    "available": true,
+    "executable": "C:\\Program Files\\nodejs\\node.exe",
+    "version": "4.5.1",
+    "optimizeHelpChecked": true,
+    "requiredFlagsFound": true
+  },
+  "finalTotalMB": 4.94,
+  "totalBudgetMB": 30,
+  "modelInspection": [
+    {
+      "id": "shuttle",
+      "sizeMB": 0.32,
+      "triangleCount": 19378,
+      "textureCount": 11,
+      "status": "optimized",
+      "warnings": []
+    },
+    {
+      "id": "vab",
+      "sizeMB": 0.05,
+      "triangleCount": 4586,
+      "textureCount": 3,
+      "status": "optimized",
+      "warnings": []
+    },
+    {
+      "id": "starMap",
+      "sizeMB": 0,
+      "triangleCount": 0,
+      "textureCount": 0,
+      "status": "missing",
+      "warnings": [
+        "GLB bulunamadı"
+      ]
+    },
+    {
+      "id": "astronaut",
+      "sizeMB": 0.06,
+      "triangleCount": 6381,
+      "textureCount": 2,
+      "status": "optimized",
+      "warnings": []
+    },
+    {
+      "id": "missionControlRoom",
+      "sizeMB": 0.05,
+      "triangleCount": 11130,
+      "textureCount": 0,
+      "status": "optimized",
+      "warnings": []
+    },
+    {
+      "id": "landsat8",
+      "sizeMB": 0.68,
+      "triangleCount": 85364,
+      "textureCount": 1,
+      "status": "optimized",
+      "warnings": []
+    },
+    {
+      "id": "markIIISuit",
+      "sizeMB": 0.32,
+      "triangleCount": 69202,
+      "textureCount": 2,
+      "status": "optimized",
+      "warnings": []
+    },
+    {
+      "id": "issInternal",
+      "sizeMB": 3.08,
+      "triangleCount": 405023,
+      "textureCount": 6,
+      "status": "optimized",
+      "warnings": [
+        "GLB yok, dönüştürme gerekir (veya kaynak indirmesi tamamlanmalı)",
+        "FBX dönüşümünde GLB içine 6 benzersiz doku aktarıldı."
+      ]
+    },
+    {
+      "id": "jason1",
+      "sizeMB": 0.34,
+      "triangleCount": 83229,
+      "textureCount": 4,
+      "status": "optimized",
+      "warnings": []
+    },
+    {
+      "id": "headquarters",
+      "sizeMB": 0.04,
+      "triangleCount": 4636,
+      "textureCount": 1,
+      "status": "optimized",
+      "warnings": []
+    }
+  ],
+  "gltfTransformOptimizeHelp": "\n  cli.js 4.5.1 — Command-line interface (CLI) for the glTF Transform SDK.\n\n  USAGE — optimize\n  \n    ▸ cli.js optimize <input> <output> [OPTIONS...]\n\n\n  Optimize the model by all available methods. Combines many features of the\n  glTF Transform CLI into a single command for convenience and faster results.\n  For more control over the optimization process, consider running individual\n  commands or using the scripting API.\n\n\n  ARGUMENTS\n\n    <input>                              Path to read glTF 2.0 (.glb, .gltf) model              \n    <output>                             Path to write output                                   \n\n  OPTIONS\n\n    --compress <method>                  Floating point compression method. Draco compresses    \n                                         geometry; Meshopt and quantization compress geometry   \n                                         and animation.                                         \n                                         one of \"draco\",\"meshopt\",\"quantize\",false, default:    \n                                         \"meshopt\"                                              \n    --flatten <bool>                     Flatten scene graph.                                   \n                                         boolean, default: true                                 \n    --instance <bool>                    Use GPU instancing with shared mesh references.        \n                                         boolean, default: true                                 \n    --instance-min <min>                 Number of instances required for instancing.           \n                                         number, default: 5                                     \n    --join <bool>                        Join meshes and reduce draw calls. Requires            \n                                         `--flatten`.                                           \n                                         boolean, default: true                                 \n    --join-meshes <bool>                 Join distinct meshes and nodes. Requires `--join`.     \n                                         boolean, default: true                                 \n    --join-named <bool>                  Join named meshes and nodes. Requires `--join`.        \n                                         boolean, default: true                                 \n    --meshopt-level <level>              Meshopt compression level.                             \n                                         one of \"medium\",\"high\", default: \"high\"                \n    --palette <bool>                     Creates palette textures and merges materials.         \n                                         boolean, default: true                                 \n    --palette-min <min>                  Minimum number of blocks in the palette texture. If    \n                                         fewer unique material values are found, no palettes    \n                                         will be generated.                                     \n                                         number, default: 5                                     \n    --prune <bool>                       Removes properties from the file if they are not       \n                                         referenced by a Scene.                                 \n                                         boolean, default: true                                 \n    --prune-attributes <bool>            Whether to prune unused vertex attributes.             \n                                         boolean, default: true                                 \n    --prune-solid-textures <bool>        Whether to prune solid (single-color) textures,        \n                                         converting them to material factors.                   \n                                         boolean, default: true                                 \n    --resample <bool>                    Resample animations, losslessly deduplicating keyframes\n                                         boolean, default: true                                 \n    --simplify <bool>                    Simplify mesh geometry with meshoptimizer.             \n                                         boolean, default: true                                 \n    --simplify-error <error>             Simplification error tolerance, as a fraction of mesh  \n                                         extent.                                                \n                                         number, default: 0.0001                                \n    --simplify-lock-border <bool>        Whether to lock topological borders of the mesh.       \n                                         boolean                                                \n    --simplify-ratio <ratio>             Target ratio (0–1) of vertices to keep.                \n                                         number, default: 0                                     \n    --sparse <bool>                      Reduces storage for zero-filled arrays. If disabled,   \n                                         existing accessors (sparse or not) are left unchanged. \n                                         boolean, default: true                                 \n    --texture-compress <format>          Texture compression format. KTX2 optimizes VRAM usage  \n                                         and performance; AVIF and WebP optimize transmission   \n                                         size. Auto recompresses in original format.            \n                                         one of \"ktx2\",\"webp\",\"avif\",\"auto\",false, default:     \n                                         \"auto\"                                                 \n    --texture-size <size>                Maximum texture dimensions, in pixels.                 \n                                         number, default: 2048                                  \n    --weld <bool>                        Merge equivalent vertices. Required when simplifying   \n                                         geometry.                                              \n                                         boolean, default: true                                 \n\n  GLOBAL OPTIONS\n\n    -h, --help                           Display global help or command-related help.           \n    -V, --version                        Display version.                                       \n    -v, --verbose                        Verbose mode: will also output debug messages.         \n    --allow-net                          Allows reads from network requests.                    \n                                         boolean                                                \n    --vertex-layout <layout>             Vertex buffer layout preset.                           \n                                         one of \"interleaved\",\"separate\", default: \"interleaved\"\n    --config <path>                      Installs custom commands or extensions. (EXPERIMENTAL) \n\n"
+}

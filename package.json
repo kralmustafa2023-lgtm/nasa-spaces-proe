@@ -1,0 +1,45 @@
+{
+  "name": "nasa-spaces-proe",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "typecheck": "tsc --noEmit",
+    "fetch-assets": "node scripts/fetch-assets.mjs",
+    "test": "vitest run lib/health/health.test.ts store/gameStore.test.ts && node --test scripts/fetch-assets.test.mjs",
+    "check-models": "node scripts/check-models.mjs",
+    "test:assets": "node --test scripts/fetch-assets.test.mjs",
+    "print-scans": "node scripts/print-scans.ts",
+    "convert-assets": "node scripts/convert-assets.mjs",
+    "optimize-assets": "node scripts/optimize-assets.mjs",
+    "inspect-assets": "node scripts/inspect-assets.mjs",
+    "prepare-assets": "npm run convert-assets && npm run optimize-assets && npm run inspect-assets"
+  },
+  "dependencies": {
+    "@react-three/drei": "^10.7.7",
+    "@react-three/fiber": "^9.4.0",
+    "next": "^16.0.0",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0",
+    "three": "^0.182.0",
+    "recharts": "^3.8.1",
+    "zustand": "^5.0.8"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4.1.0",
+    "@types/node": "^22.0.0",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "@types/three": "^0.182.0",
+    "@gltf-transform/cli": "^4.2.1",
+    "tailwindcss": "^4.1.0",
+    "typescript": "^5.9.0",
+    "vitest": "^4.1.12"
+  },
+  "engines": {
+    "node": ">=22.18.0"
+  },
+  "type": "module"
+}
