@@ -15,7 +15,7 @@ export const SCENE_BOUNDS: Record<Scene, { minX: number; maxX: number; minZ: num
   launchCenterScan1: { minX: -8.2, maxX: 8.2, minZ: -8.2, maxZ: 8.2 },
   shuttleCockpit: { minX: -2.8, maxX: 2.8, minZ: -4.5, maxZ: 2.5 },
   orbit: { minX: -5.5, maxX: 5.5, minZ: -5.5, maxZ: 5.5 },
-  station: { minX: -4.4, maxX: 4.4, minZ: -7.5, maxZ: 7.5 },
+  station: { minX: -8.2, maxX: 8.2, minZ: -8.2, maxZ: 8.2 },
   landing: { minX: -34, maxX: 38, minZ: -32, maxZ: 25 },
   launchCenterScan2: { minX: -8.2, maxX: 8.2, minZ: -8.2, maxZ: 8.2 },
 };
@@ -90,14 +90,14 @@ const SCENE_OBSTACLES: Record<Scene, Hitbox[]> = {
     { minX: -6.8, maxX: -4.2, minZ: -7.2, maxZ: -6.2 },
   ],
   station: [
-    // Oxygen Scrubber Console
-    { minX: -4.4, maxX: -2.8, minZ: -3.8, maxZ: -2.6 },
-    // Thermal Loop Terminal
-    { minX: 2.8, maxX: 4.4, minZ: -3.8, maxZ: -2.6 },
-    // Comm Antenna Terminal
-    { minX: -1.2, maxX: 1.2, minZ: -6.2, maxZ: -4.8 },
-    // ISS Bio-Medical Research Booth
-    { minX: -5.0, maxX: -3.6, minZ: 1.6, maxZ: 3.4 },
+    // ISS Bio-Medical Research Booth (back shell)
+    { minX: -6.2, maxX: -4.8, minZ: -4.2, maxZ: -2.8 },
+    // Power Terminal Base Pedestal
+    { minX: -6.8, maxX: -6.0, minZ: -0.4, maxZ: 0.4 },
+    // Oxygen Terminal Base Pedestal
+    { minX: 6.0, maxX: 6.8, minZ: -0.4, maxZ: 0.4 },
+    // Comm Antenna Terminal Base Pedestal
+    { minX: -0.4, maxX: 0.4, minZ: -6.8, maxZ: -6.0 },
   ],
   shuttleCockpit: [
     // Forward Instrument Deck

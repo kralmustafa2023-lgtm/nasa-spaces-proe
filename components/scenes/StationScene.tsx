@@ -12,9 +12,9 @@ import { REPAIRS, useGameStore } from '@/store/gameStore';
 import SceneShell, { BOOTH_POSITION, ScanBooth } from './SceneShell';
 
 const REPAIR_POSITIONS: Record<string, [number, number, number]> = {
-  power: [-7.2, 1.1, 0],
-  oxygen: [7.2, 1.1, 0],
-  comms: [0, 1.1, -7.2], // In front of the observation window
+  power: [-6.4, 1.1, 0],
+  oxygen: [6.4, 1.1, 0],
+  comms: [0, 1.1, -6.4], // In front of the observation window
 };
 
 const TASK_POSITIONS: Record<string, [number, number, number]> = {
@@ -189,7 +189,7 @@ export default function StationScene() {
     ...REPAIRS.map((repair) => ({
       id: 'repair-' + repair.id,
       position: REPAIR_POSITIONS[repair.id],
-      radius: 2.4,
+      radius: 2.8,
       color: '#f87171',
       hint: 'ARIZA // ' + repair.label.toUpperCase(),
       done: repairs.includes(repair.id),
@@ -205,7 +205,7 @@ export default function StationScene() {
     ...COUNTERMEASURES.map((task) => ({
       id: 'task-' + task.id,
       position: TASK_POSITIONS[task.id],
-      radius: 2.0,
+      radius: 2.5,
       color: '#a78bfa',
       hint: task.nameTR.toUpperCase(),
       done: completedTasks.includes(task.id),
@@ -287,11 +287,11 @@ export default function StationScene() {
       {/* Dynamic Navigational Guidance Arrows */}
       {!fixed ? (
         !repairs.includes('power') ? (
-          <PathArrows points={[[0, 0.04, 2], [-3.2, 0.04, 1.2], [-6.6, 0.04, 0.2]]} color="#f87171" spacing={1.5} />
+          <PathArrows points={[[0, 0.04, 2], [-2.8, 0.04, 1.0], [-5.6, 0.04, 0.1]]} color="#f87171" spacing={1.5} />
         ) : !repairs.includes('oxygen') ? (
-          <PathArrows points={[[0, 0.04, 2], [3.2, 0.04, 1.2], [6.6, 0.04, 0.2]]} color="#f87171" spacing={1.5} />
+          <PathArrows points={[[0, 0.04, 2], [2.8, 0.04, 1.0], [5.6, 0.04, 0.1]]} color="#f87171" spacing={1.5} />
         ) : (
-          <PathArrows points={[[0, 0.04, 2], [0, 0.04, -2.5], [0, 0.04, -6.6]]} color="#f87171" spacing={1.5} />
+          <PathArrows points={[[0, 0.04, 2], [0, 0.04, -2.5], [0, 0.04, -5.6]]} color="#f87171" spacing={1.5} />
         )
       ) : !scans.orbit ? (
         <PathArrows points={[[0, 0.04, 1], [-2.5, 0.04, -2.0], [-5.0, 0.04, -5.0]]} color="#38bdf8" spacing={1.5} />
