@@ -4,6 +4,7 @@ import { useEffect } from 'react';
 import type { MissionReport } from '@/lib/health/types';
 import SimulationNotice from './SimulationNotice';
 import StatusBadge from './StatusBadge';
+import HealthTrendChart from './HealthTrendChart';
 
 const MISSION_REPORT_SOURCES: string[] = [
   'https://www.nasa.gov/hrp/hazards/',
@@ -28,6 +29,7 @@ export default function MissionReportScreen({ report, onClose }: { report: Missi
         <button className="health-close" onClick={onClose}>Kapat <kbd>Esc</kbd></button>
       </header>
       <section className="report-section report-summary"><h2>Görev Özeti</h2><p>{report.summary}</p></section>
+      <HealthTrendChart />
       <div className="report-columns">
         <ReportList title="Attığın Adımlar" items={report.actionsTaken} icon="✓" tone="green" empty="Tamamlanan karşı önlem yok." />
         <ReportList title="Atlanan Önlemler" items={report.missedCountermeasures} icon="⚠" tone="yellow" empty="Atlanan karşı önlem yok." />

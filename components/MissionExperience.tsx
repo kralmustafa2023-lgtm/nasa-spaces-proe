@@ -1,6 +1,6 @@
 'use client';
 
-import { Component, useState, type ReactNode } from 'react';
+import { Component, useState, useEffect, type ReactNode } from 'react';
 import { Canvas } from '@react-three/fiber';
 import { REPAIRS, SCENES, SCENE_LABELS, useGameStore, type Scene } from '@/store/gameStore';
 import FirstPersonPlayer from './FirstPersonPlayer';
@@ -16,6 +16,7 @@ import HologramHUD from './ui/HologramHUD';
 import { buildMissionReport, generateScan } from '@/lib/health/simulate';
 import { buildAdvice } from '@/lib/health/advice';
 import { ASTRONAUT_PROFILES } from '@/lib/health/astronauts';
+import { soundManager } from '@/lib/audio/soundManager';
 import IntroScene from './scenes/IntroScene';
 import LaunchCenterScan1Scene from './scenes/LaunchCenterScan1Scene';
 import ShuttleCockpitScene from './scenes/ShuttleCockpitScene';
@@ -161,6 +162,30 @@ export default function MissionExperience() {
   const astronautId = useGameStore((state) => state.astronautId);
   const astronaut = astronautId ? ASTRONAUT_PROFILES[astronautId] : null;
   const [locked, setLocked] = useState(false);
+  const [muted, setMuted] = useState(false);
+
+  // Audio system synchronization
+  useEffect(() => {
+    soundManager.updateAmbient(scene);
+  }, [scene]);
+
+  useEffect(() => {
+    if (countdown !== null) {
+      soundManager.playCountdownBeep(countdown === 0);
+    }
+  }, [countdown]);
+
+  useEffect(() => {
+    if (scanning) {
+      soundManager.playScan();
+    }
+  }, [scanning]);
+
+  const toggleSound = () => {
+    const next = soundManager.toggleMute();
+    setMuted(next);
+    notify(next ? 'Ses kapatıldı (Sessiz mod).' : 'Ses açıldı.');
+  };
 
   const cockpitMode = useGameStore((state) => state.cockpitMode);
   const SceneComponent = sceneComponents[scene];
@@ -243,6 +268,28 @@ export default function MissionExperience() {
             </strong>
           </span>
         </div>
+        <button
+          onClick={toggleSound}
+          style={{
+            background: 'rgba(8, 24, 42, 0.85)',
+            border: '1px solid rgba(56, 189, 248, 0.35)',
+            borderRadius: '50%',
+            width: '36px',
+            height: '36px',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            cursor: 'pointer',
+            fontSize: '16px',
+            color: muted ? '#64748b' : '#38bdf8',
+            boxShadow: muted ? 'none' : '0 0 12px rgba(56, 189, 248, 0.3)',
+            transition: 'all 0.2s',
+          }}
+          title={muted ? 'Sesi Aç' : 'Sesi Kapat (Sessiz Mod)'}
+          aria-label="Ses Kontrolü"
+        >
+          {muted ? '🔇' : '🔊'}
+        </button>
       </header>
 
       <section className="location-label" aria-live="polite">

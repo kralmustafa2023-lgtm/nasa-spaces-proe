@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect, useRef } from 'react';
+import { soundManager } from '@/lib/audio/soundManager';
 
 export interface RepairDetails {
   id: string;
@@ -155,9 +156,12 @@ export default function RepairModal({ repairId, onComplete, onClose }: RepairMod
     setIsRepairing(true);
     setProgress(0);
     setActiveStep(1);
+    soundManager.playRepairStep();
 
     const totalDuration = 3600; // 3.6s
     const startTime = performance.now();
+    let played2 = false;
+    let played3 = false;
 
     const interval = setInterval(() => {
       const elapsed = performance.now() - startTime;
@@ -165,13 +169,22 @@ export default function RepairModal({ repairId, onComplete, onClose }: RepairMod
       setProgress(pct);
 
       if (pct >= 33 && pct < 66) {
+        if (!played2) {
+          played2 = true;
+          soundManager.playRepairStep();
+        }
         setActiveStep(2);
       } else if (pct >= 66 && pct < 100) {
+        if (!played3) {
+          played3 = true;
+          soundManager.playRepairStep();
+        }
         setActiveStep(3);
       } else if (pct >= 100) {
         clearInterval(interval);
         setIsDone(true);
         setActiveStep(4);
+        soundManager.playRepairComplete();
         setTimeout(() => {
           onComplete();
         }, 1200);

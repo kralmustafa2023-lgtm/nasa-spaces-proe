@@ -5,6 +5,7 @@ import { useFrame } from '@react-three/fiber';
 import { Html } from '@react-three/drei';
 import type { Group } from 'three';
 import { useGameStore } from '@/store/gameStore';
+import { soundManager } from '@/lib/audio/soundManager';
 
 export type Interactable = {
   id: string;
@@ -93,7 +94,10 @@ export default function Interactables({ items }: { items: Interactable[] }) {
       if (event.code !== 'KeyE' || event.repeat) return;
       const state = useGameStore.getState();
       if (state.activeOverlay || state.activeRepair || state.wristOpen || state.hologramOpen || state.scanning || state.countdown !== null) return;
-      nearest.current?.onUse();
+      if (nearest.current) {
+        soundManager.playInteract();
+        nearest.current.onUse();
+      }
     };
     window.addEventListener('keydown', down);
     return () => {

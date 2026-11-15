@@ -1,8 +1,9 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useGameStore, SCENE_LABELS, type Scene } from '@/store/gameStore';
 import { ASTRONAUT_PROFILES } from '@/lib/health/astronauts';
+import { soundManager } from '@/lib/audio/soundManager';
 
 interface HologramHUDProps {
   scene: Scene;
@@ -17,6 +18,13 @@ export default function HologramHUD({ scene, steps }: HologramHUDProps) {
   const notify = useGameStore((state) => state.notify);
   const astronautId = useGameStore((state) => state.astronautId);
   const astronaut = astronautId ? ASTRONAUT_PROFILES[astronautId] : null;
+
+  useEffect(() => {
+    soundManager.playHologramToggle(true);
+    return () => {
+      soundManager.playHologramToggle(false);
+    };
+  }, []);
 
   // Latest available vital telemetry from the simulation engine
   const latestScan = scans.post ?? scans.orbit ?? scans.baseline;

@@ -6,6 +6,7 @@ import { useFrame, useThree } from '@react-three/fiber';
 import type { PointerLockControls as Controls } from 'three-stdlib';
 import { Vector3 } from 'three';
 import { useGameStore, type Scene } from '@/store/gameStore';
+import { soundManager } from '@/lib/audio/soundManager';
 
 export const PLAYER_HEIGHT = 1.7;
 const PLAYER_COLLISION_RADIUS = 0.45;
@@ -159,6 +160,8 @@ export default function FirstPersonPlayer({ onLockChange }: { onLockChange: (loc
   const movement = useRef(new Vector3());
   const verticalVelocity = useRef(0);
   const isGrounded = useRef(true);
+  const wasGrounded = useRef(true);
+  const stepAccumulator = useRef(0);
 
   const camera = useThree((state) => state.camera);
   const gl = useThree((state) => state.gl);
@@ -237,6 +240,7 @@ export default function FirstPersonPlayer({ onLockChange }: { onLockChange: (loc
         if (isGrounded.current) {
           verticalVelocity.current = 5.6; // Jump impulse
           isGrounded.current = false;
+          soundManager.playJump();
         }
         return;
       }
@@ -309,6 +313,25 @@ export default function FirstPersonPlayer({ onLockChange }: { onLockChange: (loc
       isGrounded.current = true;
     } else {
       isGrounded.current = false;
+    }
+
+    // Landing sound detection
+    if (!wasGrounded.current && isGrounded.current) {
+      soundManager.playLand();
+    }
+    wasGrounded.current = isGrounded.current;
+
+    // Footstep audio synthesizer (walking & sprinting)
+    if (movement.current.lengthSq() > 0 && isGrounded.current) {
+      const isMetal = scene === 'station' || scene === 'shuttleCockpit' || scene === 'orbit';
+      stepAccumulator.current += delta;
+      const stepInterval = isSprinting ? 0.28 : 0.44;
+      if (stepAccumulator.current >= stepInterval) {
+        soundManager.playFootstep(isSprinting, isMetal);
+        stepAccumulator.current = 0;
+      }
+    } else {
+      stepAccumulator.current = 0.35;
     }
   });
 
