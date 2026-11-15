@@ -305,7 +305,7 @@ export default function MissionExperience() {
         <button id="enter-mission">
           🖱️ Fareyi Kilitle ve Çevreye Bak <span>↗</span>
         </button>
-        <p>Ekrana Tıkla: Fareyi Kilitle · Fareyi Oynat: Çevreye Bak · WASD: Yürü · Space: Zıpla · Esc: İmleci Serbest Bırak</p>
+        <p>Ekrana Tıkla: Fareyi Kilitle · Fareyi Oynat: Çevreye Bak · WASD: Yürü · Shift: Koş · Space: Zıpla · Esc: İmleci Serbest Bırak</p>
       </div>
 
       <DebugPanel />
@@ -313,6 +313,9 @@ export default function MissionExperience() {
       <div className="bottom-controls">
         <span>
           <kbd>W A S D</kbd> Hareket
+        </span>
+        <span>
+          <kbd>Shift</kbd> Koş
         </span>
         <span>
           <kbd>Space</kbd> Zıpla

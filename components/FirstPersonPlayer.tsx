@@ -241,7 +241,7 @@ export default function FirstPersonPlayer({ onLockChange }: { onLockChange: (loc
         return;
       }
 
-      if (['KeyW', 'KeyA', 'KeyS', 'KeyD'].includes(event.code)) {
+      if (['KeyW', 'KeyA', 'KeyS', 'KeyD', 'ShiftLeft', 'ShiftRight'].includes(event.code)) {
         event.preventDefault();
         keys.current.add(event.code);
       }
@@ -277,7 +277,9 @@ export default function FirstPersonPlayer({ onLockChange }: { onLockChange: (loc
     const strafe = Number(keys.current.has('KeyD')) - Number(keys.current.has('KeyA'));
     movement.current.copy(direction.current).multiplyScalar(forward).addScaledVector(right.current, strafe);
 
-    const speed = scene === 'intro' || scene === 'landing' ? 4.8 : 3.4;
+    const isSprinting = keys.current.has('ShiftLeft') || keys.current.has('ShiftRight');
+    const baseSpeed = scene === 'intro' || scene === 'landing' ? 4.8 : 3.4;
+    const speed = isSprinting ? baseSpeed * 1.85 : baseSpeed;
     if (movement.current.lengthSq() > 0) {
       const step = movement.current.normalize().multiplyScalar(Math.min(delta, 0.05) * speed);
       const bounds = SCENE_BOUNDS[scene] ?? { minX: -8, maxX: 8, minZ: -8, maxZ: 8 };

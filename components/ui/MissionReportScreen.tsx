@@ -45,10 +45,10 @@ export default function MissionReportScreen({ report, onClose }: { report: Missi
         </li>)}</ul> : <p>Öneri listesi oluşturmak için tarama bulunamadı.</p>}
       </section>
       <section className="report-section"><h2>Kaynaklar</h2>
-        <ul className="source-list">
+        <ul className="source-list" style={{ display: 'flex', flexDirection: 'column', gap: '10px', alignItems: 'flex-start' }}>
           {MISSION_REPORT_SOURCES.map((url) => (
-            <li key={url}>
-              <a href={url} target="_blank" rel="noreferrer">
+            <li key={url} style={{ display: 'block', width: '100%' }}>
+              <a href={url} target="_blank" rel="noreferrer" style={{ wordBreak: 'break-all' }}>
                 {url}
               </a>
             </li>
