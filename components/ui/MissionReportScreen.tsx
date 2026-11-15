@@ -1,9 +1,18 @@
 'use client';
 
 import { useEffect } from 'react';
-import type { MissionReport, SourceReference } from '@/lib/health/types';
+import type { MissionReport } from '@/lib/health/types';
 import SimulationNotice from './SimulationNotice';
 import StatusBadge from './StatusBadge';
+
+const MISSION_REPORT_SOURCES: string[] = [
+  'https://www.nasa.gov/hrp/hazards/',
+  'https://www.nasa.gov/hrp/risks/',
+  'https://www.nasa.gov/hrp/ongoing-hrp-research/',
+  'https://www.asc-csa.gc.ca/eng/news/articles/2026/2026-02-26-monitoring-radiation-astronaut-health.asp',
+  'https://www.asc-csa.gc.ca/eng/iss/science/why-do-we-conduct-science-experiments-in-space.asp',
+  'https://science.nasa.gov/3d-resources/',
+];
 
 export default function MissionReportScreen({ report, onClose }: { report: MissionReport; onClose: () => void }) {
   useEffect(() => {
@@ -11,7 +20,6 @@ export default function MissionReportScreen({ report, onClose }: { report: Missi
     window.addEventListener('keydown', down);
     return () => window.removeEventListener('keydown', down);
   }, [onClose]);
-  const sources = uniqueSources(report.nasaCountermeasures.flatMap((item) => item.sources));
 
   return <div className="health-overlay" role="dialog" aria-modal="true" aria-labelledby="report-title">
     <section className="health-window report-window">
@@ -37,9 +45,15 @@ export default function MissionReportScreen({ report, onClose }: { report: Missi
         </li>)}</ul> : <p>Öneri listesi oluşturmak için tarama bulunamadı.</p>}
       </section>
       <section className="report-section"><h2>Kaynaklar</h2>
-        {sources.length ? <ul className="source-list">{sources.map((source) => <li key={source.label}>
-          {source.url ? <a href={source.url} target="_blank" rel="noreferrer">{source.label} ↗</a> : <span>{source.label}</span>}
-        </li>)}</ul> : <p>Kaynak eklenmedi.</p>}
+        <ul className="source-list">
+          {MISSION_REPORT_SOURCES.map((url) => (
+            <li key={url}>
+              <a href={url} target="_blank" rel="noreferrer">
+                {url}
+              </a>
+            </li>
+          ))}
+        </ul>
       </section>
       <footer className="report-footer"><SimulationNotice /><button className="print-button" onClick={() => window.print()}>Yazdır <span aria-hidden="true">⎙</span></button></footer>
     </section>
@@ -48,8 +62,4 @@ export default function MissionReportScreen({ report, onClose }: { report: Missi
 
 function ReportList({ title, items, icon, tone, empty }: { title: string; items: string[]; icon: string; tone: 'green' | 'yellow'; empty: string }) {
   return <section className="report-section"><h2>{title}</h2>{items.length ? <ul className={'action-list tone-' + tone}>{items.map((item) => <li key={item}><span aria-hidden="true">{icon}</span>{item}</li>)}</ul> : <p>{empty}</p>}</section>;
-}
-
-function uniqueSources(sources: SourceReference[]) {
-  return [...new Map(sources.map((source) => [source.url ?? source.label, source])).values()];
 }
