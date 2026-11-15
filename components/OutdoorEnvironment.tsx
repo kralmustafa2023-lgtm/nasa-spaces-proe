@@ -428,7 +428,7 @@ export default function OutdoorEnvironment() {
       </mesh>
 
       {/* 3. Main Roads */}
-      <mesh position={[0, 0.02, 0]}>
+      <mesh position={[0, 0.02, 0]} rotation={[-Math.PI / 2, 0, 0]}>
         <planeGeometry args={[7, 44]} />
         <meshStandardMaterial color="#2a333d" roughness={0.85} />
       </mesh>

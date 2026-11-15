@@ -172,50 +172,55 @@ export default function FirstPersonPlayer({ onLockChange }: { onLockChange: (loc
   const toggleHologram = useGameStore((state) => state.toggleHologram);
 
   const isModalOpen = wristOpen || !!activeOverlay || !!activeRepair;
+  const prevModalOpen = useRef(isModalOpen);
 
-  // Scene spawn positioning
-  useEffect(() => {
-    const spawn = SCENE_SPAWNS[scene] ?? [0, PLAYER_HEIGHT, 6];
-    camera.position.set(spawn[0], spawn[1], spawn[2]);
-    camera.rotation.set(0, 0, 0);
-    keys.current.clear();
-    verticalVelocity.current = 0;
-    isGrounded.current = true;
-  }, [camera, scene]);
-
-  // Unlock pointer when a modal is opened
+  // Automatic pointer lock management:
+  // When modal/report opens: immediately release cursor so user can click freely.
+  // When modal/report closes: immediately re-lock cursor so user is straight back into first-person view!
   useEffect(() => {
     if (isModalOpen) {
+      if (typeof document !== 'undefined' && document.pointerLockElement) {
+        document.exitPointerLock();
+      }
       controls.current?.unlock();
       keys.current.clear();
-    }
-  }, [isModalOpen]);
-
-  // Click on the 3D canvas or game area to lock the mouse cursor directly
-  useEffect(() => {
-    const dom = gl.domElement;
-    const handleClick = (e: MouseEvent) => {
-      const state = useGameStore.getState();
-      const modalActive = state.wristOpen || !!state.activeOverlay || !!state.activeRepair;
-      if (!modalActive && !controls.current?.isLocked) {
-        controls.current?.lock();
-      }
-    };
-
-    dom.addEventListener('click', handleClick);
-    window.addEventListener('click', (e) => {
-      const target = e.target as HTMLElement | null;
-      if (target?.closest('.enter-prompt') || target?.closest('.scene-canvas')) {
+    } else if (prevModalOpen.current && !isModalOpen) {
+      // Re-lock with short delay so close click/esc finishes
+      const timer = setTimeout(() => {
         const state = useGameStore.getState();
         const modalActive = state.wristOpen || !!state.activeOverlay || !!state.activeRepair;
         if (!modalActive && !controls.current?.isLocked) {
-          controls.current?.lock();
+          try {
+            controls.current?.lock();
+          } catch (_) {}
         }
+      }, 60);
+      return () => clearTimeout(timer);
+    }
+    prevModalOpen.current = isModalOpen;
+  }, [isModalOpen]);
+
+  // Click on screen automatically locks mouse cursor
+  useEffect(() => {
+    const dom = gl.domElement;
+    const handleTryLock = () => {
+      const state = useGameStore.getState();
+      const modalActive = state.wristOpen || !!state.activeOverlay || !!state.activeRepair;
+      if (!modalActive && !controls.current?.isLocked) {
+        try {
+          controls.current?.lock();
+        } catch (_) {}
       }
+    };
+
+    dom.addEventListener('click', handleTryLock);
+    window.addEventListener('click', (e) => {
+      // If clicking outside interactive modal elements, ensure cursor re-locks
+      setTimeout(handleTryLock, 40);
     });
 
     return () => {
-      dom.removeEventListener('click', handleClick);
+      dom.removeEventListener('click', handleTryLock);
     };
   }, [gl]);
 
@@ -226,6 +231,13 @@ export default function FirstPersonPlayer({ onLockChange }: { onLockChange: (loc
       const state = useGameStore.getState();
       if (state.activeOverlay || state.wristOpen || state.activeRepair) return;
       if (event.target instanceof HTMLElement && event.target.matches('input,textarea,select')) return;
+
+      // Auto-lock mouse on any gameplay keypress if unlocked
+      if (!controls.current?.isLocked) {
+        try {
+          controls.current?.lock();
+        } catch (_) {}
+      }
 
       // 'R' key toggles wrist holographic HUD
       if (event.code === 'KeyR' && !event.repeat) {
